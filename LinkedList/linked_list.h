@@ -28,6 +28,7 @@ class LinkedList {
   bool isSorted();
   void removeDuplicates();
   void reverseByElements();
+  void reverseByLinks();
 
   Node *getHead();
 };

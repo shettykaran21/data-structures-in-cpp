@@ -295,4 +295,21 @@ void LinkedList::reverseByElements() {
   }
 }
 
+// Preferred over reverseByElements
+void LinkedList::reverseByLinks() {
+  Node *p = head;
+  Node *q = NULL;
+  Node *r = NULL;
+
+  while (p != NULL) {
+    r = q;
+    q = p;
+    p = p->next;
+
+    // Reverse links
+    q->next = r;
+  }
+  head = q;
+}
+
 Node * ::LinkedList::getHead() { return this->head; }
