@@ -27,6 +27,7 @@ class LinkedList {
   void deleteAt(int index);
   bool isSorted();
   void removeDuplicates();
+  void reverseByElements();
 
   Node *getHead();
 };

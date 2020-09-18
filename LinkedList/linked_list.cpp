@@ -277,4 +277,22 @@ void LinkedList::removeDuplicates() {
   }
 }
 
+void LinkedList::reverseByElements() {
+  int n = this->count();
+  int arr[n];
+
+  Node *p = head;
+
+  for (int i = 0; i < n; ++i) {
+    arr[i] = p->data;
+    p = p->next;
+  }
+
+  p = head;
+  for (int i = n - 1; i >= 0; --i) {
+    p->data = arr[i];
+    p = p->next;
+  }
+}
+
 Node * ::LinkedList::getHead() { return this->head; }
