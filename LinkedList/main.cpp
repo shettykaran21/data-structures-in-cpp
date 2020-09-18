@@ -236,16 +236,17 @@ int main() {
   cout << "Max = " << list.Max() << '\n';
   cout << "Key found at index " << list.Search(5) << '\n';
   list.Display();
-  list.InsertFirst(9);
-  list.Display();
-  list.InsertAt(2, 12);
-  list.Display();
+  // list.InsertFirst(9);
+  // list.Display();
+  // list.InsertAt(2, 12);
+  // list.Display();
   // list.InsertInSorted(6);
   // list.Display();
   list.DeleteFirst();
   list.Display();
   list.DeleteAt(2);
   list.Display();
+  cout << list.isSorted() << '\n';
 
   return 0;
 }

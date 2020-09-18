@@ -25,6 +25,7 @@ class LinkedList {
   void InsertInSorted(int data);
   void DeleteFirst();
   void DeleteAt(int index);
+  bool isSorted();
 
   Node *get_head();
 };

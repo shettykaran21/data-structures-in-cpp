@@ -246,4 +246,19 @@ void LinkedList::DeleteAt(int index) {
   delete p;
 }
 
+bool LinkedList::isSorted() {
+  Node *p = head;
+  int temp = INT32_MIN;
+
+  while (p != NULL) {
+    if (p->data < temp) {
+      return false;
+    }
+
+    temp = p->data;
+    p = p->next;
+  }
+  return true;
+}
+
 Node * ::LinkedList::get_head() { return this->head; }
