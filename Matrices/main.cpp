@@ -15,18 +15,18 @@ int main() {
 
   // ---------Diagonal Matrix-------//
   Diagonal m(length);
-  m.Set(1, 1, 4);
-  m.Set(2, 2, 5);
-  m.Set(3, 3, 6);
-  m.Set(4, 4, 7);
+  m.set(1, 1, 4);
+  m.set(2, 2, 5);
+  m.set(3, 3, 6);
+  m.set(4, 4, 7);
 
   cout << "Enter elements: ";
   int a;
   for (int i = 1; i <= length; ++i) {
     cin >> a;
-    m.Set(i, i, a);
+    m.set(i, i, a);
   }
-  m.Display();
+  m.display();
 
   // ----------Lower Triangular Matrix------//
   // LowerTriangular m(4);
@@ -35,10 +35,10 @@ int main() {
   // for (int i = 1; i <= length; ++i) {
   //   for (int j = 1; j <= length; ++j) {
   //     cin >> a;
-  //     m.Set(i, j, a);
+  //     m.set(i, j, a);
   //   }
   // }
-  // m.Display();
+  // m.display();
 
   // ----------Lower Triangular Matrix------//
   // UpperTriangular m(4);
@@ -47,10 +47,10 @@ int main() {
   // for (int i = 1; i <= length; ++i) {
   //   for (int j = 1; j <= length; ++j) {
   //     cin >> a;
-  //     m.Set(i, j, a);
+  //     m.set(i, j, a);
   //   }
   // }
-  // m.Display();
+  // m.display();
 
   return 0;
 }

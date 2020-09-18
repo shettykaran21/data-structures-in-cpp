@@ -6,25 +6,25 @@ using namespace std;
 
 UpperTriangular::UpperTriangular(int length) {
   this->length = length;
-  set_A(new int[(get_length() * (get_length() + 1)) / 2]);
+  setA(new int[(getLength() * (getLength() + 1)) / 2]);
 }
 
-void UpperTriangular::Set(int i, int j, int x) {
+void UpperTriangular::set(int i, int j, int x) {
   if (i <= j) {
     A[(j * (j - 1)) / 2 + (i - 1)] = x;
   }
 }
 
-int UpperTriangular::Get(int i, int j) {
+int UpperTriangular::get(int i, int j) {
   if (i <= j) {
     return A[(j * (j - 1)) / 2 + (i - 1)];
   }
   return 0;
 }
 
-void UpperTriangular::Display() {
-  for (int i = 1; i <= get_length(); ++i) {
-    for (int j = 1; j <= get_length(); ++j) {
+void UpperTriangular::display() {
+  for (int i = 1; i <= getLength(); ++i) {
+    for (int j = 1; j <= getLength(); ++j) {
       if (i <= j) {
         cout << A[(j * (j - 1)) / 2 + (i - 1)] << ' ';
       } else {
@@ -37,7 +37,7 @@ void UpperTriangular::Display() {
 }
 
 // Getters and Setters
-int *UpperTriangular::get_A() { return this->A; }
-void UpperTriangular::set_A(int *A) { this->A = A; }
-int UpperTriangular::get_length() { return this->length; }
-void UpperTriangular::set_length(int length) { this->length = length; }
+int *UpperTriangular::getA() { return this->A; }
+void UpperTriangular::setA(int *A) { this->A = A; }
+int UpperTriangular::getLength() { return this->length; }
+void UpperTriangular::setLength(int length) { this->length = length; }

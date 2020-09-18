@@ -9,14 +9,14 @@ class UpperTriangular {
  public:
   UpperTriangular(int);
 
-  void Set(int, int, int);
-  int Get(int, int);
-  void Display();
+  void set(int, int, int);
+  int get(int, int);
+  void display();
 
-  void set_A(int *);
-  int *get_A();
-  void set_length(int);
-  int get_length();
+  void setA(int *);
+  int *getA();
+  void setLength(int);
+  int getLength();
 };
 
 #endif
