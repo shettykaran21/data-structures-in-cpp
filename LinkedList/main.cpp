@@ -207,8 +207,8 @@
 
 #include <bits/stdc++.h>
 
-#include "LinkedList.h"
-#include "Node.h"
+#include "linked_list.h"
+#include "node.h"
 
 using namespace std;
 
