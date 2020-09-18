@@ -1,5 +1,5 @@
-#ifndef UPPER_TRIANHULR
-#define UPPER_TRIANHULR
+#ifndef UPPER_TRIANGULAR
+#define UPPER_TRIANGULAR
 
 class UpperTriangular {
  private:

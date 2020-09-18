@@ -1,4 +1,4 @@
-#include "Diagonal.h"
+#include "diagonal.h"
 
 #include <iostream>
 

@@ -1,4 +1,4 @@
-#include "UpperTriangular.h"
+#include "upper_triangular.h"
 
 #include <iostream>
 

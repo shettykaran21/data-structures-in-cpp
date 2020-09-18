@@ -1,4 +1,4 @@
-#include "LowerTriangular.h"
+#include "lower_triangular.h"
 
 #include <iostream>
 
