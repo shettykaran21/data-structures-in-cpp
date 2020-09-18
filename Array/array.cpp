@@ -1,4 +1,5 @@
-#include "Array.h"
+#include "array.h"
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -144,9 +145,7 @@ int Array::sum() {
   return sum;
 }
 
-double Array::avg() {
-  return sum() / getLength();
-}
+double Array::avg() { return sum() / getLength(); }
 
 void Array::reverse() {
   int B[getLength()];
@@ -230,18 +229,10 @@ void Array::negative_one_side() {
   }
 }
 
-int Array::getLength() {
-  return this->length;
-}
+int Array::getLength() { return this->length; }
 
-int *Array::getA() {
-  return this->A;
-}
+int *Array::getA() { return this->A; }
 
-void Array::setLength(int length) {
-  this->length = length;
-}
+void Array::setLength(int length) { this->length = length; }
 
-void Array::setA(int *A) {
-  this->A = A;
-}
+void Array::setA(int *A) { this->A = A; }
