@@ -9,25 +9,25 @@ class LinkedList {
 
  public:
   LinkedList();
-  void Create(int arr[], int n);
-  void Display();
-  void DisplayRecursive(Node *p);
-  int Count();
-  int CountRecursive(Node *p);
-  int Sum();
-  int SumRecursive(Node *p);
-  int Max();
-  int MaxRecursive(Node *p);
-  int Search(int key);
-  void InsertFirst(int data);
-  void InsertEnd(int data);
-  void InsertAt(int index, int data);
-  void InsertInSorted(int data);
-  void DeleteFirst();
-  void DeleteAt(int index);
+  void create(int arr[], int n);
+  void display();
+  void displayRecursive(Node *p);
+  int count();
+  int countRecursive(Node *p);
+  int sum();
+  int sumRecursive(Node *p);
+  int max();
+  int maxRecursive(Node *p);
+  int search(int key);
+  void insertFirst(int data);
+  void insertEnd(int data);
+  void insertAt(int index, int data);
+  void insertInSorted(int data);
+  void deleteFirst();
+  void deleteAt(int index);
   bool isSorted();
 
-  Node *get_head();
+  Node *getHead();
 };
 
 #endif

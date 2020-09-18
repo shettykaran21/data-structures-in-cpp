@@ -219,33 +219,33 @@ int main() {
 
   LinkedList list;
 
-  // list.Create(arr, sizeof(arr) / sizeof(arr[0]));
-  // list.InsertFirst(5);
-  // list.InsertAt(head, 1, 4);
-  // list.InsertAt(head, 1, 6);
-  // list.InsertAt(head, 1, 10);
+  // list.create(arr, sizeof(arr) / sizeof(arr[0]));
+  // list.insertFirst(5);
+  // list.insertAt(head, 1, 4);
+  // list.insertAt(head, 1, 6);
+  // list.insertAt(head, 1, 10);
 
-  list.InsertEnd(1);
-  list.InsertEnd(4);
-  list.InsertEnd(8);
-  list.InsertEnd(10);
+  list.insertEnd(1);
+  list.insertEnd(4);
+  list.insertEnd(8);
+  list.insertEnd(10);
 
-  list.Display();
-  cout << "Count = " << list.Count() << '\n';
-  cout << "Sum = " << list.Sum() << '\n';
-  cout << "Max = " << list.Max() << '\n';
-  cout << "Key found at index " << list.Search(5) << '\n';
-  list.Display();
-  // list.InsertFirst(9);
-  // list.Display();
-  // list.InsertAt(2, 12);
-  // list.Display();
-  // list.InsertInSorted(6);
-  // list.Display();
-  list.DeleteFirst();
-  list.Display();
-  list.DeleteAt(2);
-  list.Display();
+  list.display();
+  cout << "Count = " << list.count() << '\n';
+  cout << "Sum = " << list.sum() << '\n';
+  cout << "Max = " << list.max() << '\n';
+  cout << "Key found at index " << list.search(5) << '\n';
+  list.display();
+  // list.insertFirst(9);
+  // list.display();
+  // list.insertAt(2, 12);
+  // list.display();
+  // list.insertInSorted(6);
+  // list.display();
+  list.deleteFirst();
+  list.display();
+  list.deleteAt(2);
+  list.display();
   cout << list.isSorted() << '\n';
 
   return 0;

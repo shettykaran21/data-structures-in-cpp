@@ -6,7 +6,7 @@ using namespace std;
 
 LinkedList::LinkedList() { head = NULL; }
 
-void LinkedList::Create(int arr[], int n) {
+void LinkedList::create(int arr[], int n) {
   Node *new_node, *last_node;
 
   head = new Node();
@@ -24,7 +24,7 @@ void LinkedList::Create(int arr[], int n) {
   }
 }
 
-void LinkedList::Display() {
+void LinkedList::display() {
   Node *p = head;
   while (p != NULL) {
     cout << p->data << " ";
@@ -33,16 +33,16 @@ void LinkedList::Display() {
   cout << '\n';
 }
 
-void LinkedList::DisplayRecursive(Node *p) {
+void LinkedList::displayRecursive(Node *p) {
   if (p != NULL) {
     cout << p->data << ' ';
-    DisplayRecursive(p->next);
+    displayRecursive(p->next);
   } else {
     cout << '\n';
   }
 }
 
-int LinkedList::Count() {
+int LinkedList::count() {
   Node *p = head;
   int count = 0;
   while (p != NULL) {
@@ -52,15 +52,15 @@ int LinkedList::Count() {
   return count;
 }
 
-int LinkedList::CountRecursive(Node *p) {
+int LinkedList::countRecursive(Node *p) {
   if (p == NULL) {
     return 0;
   }
 
-  return CountRecursive(p->next) + 1;
+  return countRecursive(p->next) + 1;
 }
 
-int LinkedList::Sum() {
+int LinkedList::sum() {
   Node *p = head;
 
   int sum = 0;
@@ -71,15 +71,15 @@ int LinkedList::Sum() {
   return sum;
 }
 
-int LinkedList::SumRecursive(Node *p) {
+int LinkedList::sumRecursive(Node *p) {
   if (p == NULL) {
     return 0;
   }
 
-  return SumRecursive(p->next) + p->data;
+  return sumRecursive(p->next) + p->data;
 }
 
-int LinkedList::Max() {
+int LinkedList::max() {
   Node *p = head;
 
   int max = INT32_MIN;
@@ -92,13 +92,13 @@ int LinkedList::Max() {
   return max;
 }
 
-int LinkedList::MaxRecursive(Node *p) {
+int LinkedList::maxRecursive(Node *p) {
   int x = 0;
   if (p == NULL) {
     return INT32_MIN;
   }
 
-  x = MaxRecursive(p->next);
+  x = maxRecursive(p->next);
   if (x > p->data) {
     return x;
   } else {
@@ -106,7 +106,7 @@ int LinkedList::MaxRecursive(Node *p) {
   }
 }
 
-// int LinkedList::Search(int key) {
+// int LinkedList::search(int key) {
 //   Node *p = head;
 
 //   int count = 0;
@@ -121,7 +121,7 @@ int LinkedList::MaxRecursive(Node *p) {
 // }
 
 // Searching with Move to head
-int LinkedList::Search(int key) {
+int LinkedList::search(int key) {
   Node *p = head;
   Node *q = NULL;
 
@@ -142,7 +142,7 @@ int LinkedList::Search(int key) {
   return -1;
 }
 
-void LinkedList::InsertFirst(int data) {
+void LinkedList::insertFirst(int data) {
   // Create and set data of new node
   Node *new_node = new Node();
   new_node->data = data;
@@ -153,7 +153,7 @@ void LinkedList::InsertFirst(int data) {
   head = new_node;
 }
 
-void LinkedList::InsertEnd(int data) {
+void LinkedList::insertEnd(int data) {
   // Create and set data of new node
   Node *new_node = new Node();
   new_node->data = data;
@@ -175,10 +175,10 @@ void LinkedList::InsertEnd(int data) {
   last_node->next = new_node;
 }
 
-void LinkedList::InsertAt(int index, int data) {
+void LinkedList::insertAt(int index, int data) {
   Node *p = head;
 
-  if (index <= 0 || index > this->Count()) {
+  if (index <= 0 || index > this->count()) {
     return;
   }
 
@@ -193,7 +193,7 @@ void LinkedList::InsertAt(int index, int data) {
   p->next = new_node;
 }
 
-void LinkedList::InsertInSorted(int data) {
+void LinkedList::insertInSorted(int data) {
   // Create and set data of new node
   Node *new_node = new Node();
   new_node->data = data;
@@ -222,15 +222,15 @@ void LinkedList::InsertInSorted(int data) {
   }
 }
 
-void LinkedList::DeleteFirst() {
+void LinkedList::deleteFirst() {
   Node *p = head;
   head = head->next;
 
   delete p;
 }
 
-void LinkedList::DeleteAt(int index) {
-  if (index <= 0 || index > this->Count()) {
+void LinkedList::deleteAt(int index) {
+  if (index <= 0 || index > this->count()) {
     return;
   }
 
@@ -261,4 +261,4 @@ bool LinkedList::isSorted() {
   return true;
 }
 
-Node * ::LinkedList::get_head() { return this->head; }
+Node * ::LinkedList::getHead() { return this->head; }
