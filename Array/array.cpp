@@ -18,11 +18,11 @@ void Array::display() {
 }
 
 void Array::append(int element) {
-  increase_length();
+  increaseLength();
   A[getLength() - 1] = element;
 }
 
-void Array::increase_length() {
+void Array::increaseLength() {
   int *B = new int[getLength() + 1];
   for (int i = 0; i < getLength(); ++i) {
     B[i] = A[i];
@@ -35,7 +35,7 @@ void Array::increase_length() {
 
 void Array::insert(int element, int index) {
   if (index >= 0 && index < getLength()) {
-    increase_length();
+    increaseLength();
     for (int i = getLength() - 1; i >= index; --i) {
       A[i] = A[i - 1];
     }
@@ -43,7 +43,7 @@ void Array::insert(int element, int index) {
   }
 }
 
-void Array::delete_at(int index) {
+void Array::deleteAt(int index) {
   if (index >= 0 && index < getLength()) {
     for (int i = index; i < getLength(); ++i) {
       A[i] = A[i + 1];
@@ -63,7 +63,7 @@ int Array::search(int key) {
   return -1;
 }
 
-int Array::binary_search(int key) {
+int Array::binarySearch(int key) {
   int *B = new int[getLength()];
   for (int i = 0; i < getLength(); ++i) {
     B[i] = A[i];
@@ -165,32 +165,32 @@ void Array::reverse2() {
   }
 }
 
-void Array::left_shift() {
+void Array::leftShift() {
   for (int i = 1; i <= getLength(); i++) {
     A[i - 1] = A[i];
   }
 }
 
-void Array::right_shift() {
+void Array::rightShift() {
   for (int i = getLength() - 1; i >= 0; i--) {
     A[i] = A[i - 1];
   }
 }
 
-void Array::left_rotation() {
+void Array::leftRotation() {
   int first = A[0];
-  left_shift();
+  leftShift();
   A[getLength() - 1] = first;
 }
 
-void Array::right_rotation() {
+void Array::rightRotation() {
   int last = A[getLength() - 1];
-  right_shift();
+  rightShift();
   A[0] = last;
 }
 
-void Array::insert_in_sorted(int value) {
-  increase_length();
+void Array::insertInSorted(int value) {
+  increaseLength();
   int i = getLength() - 1;
   while (A[i] > value) {
     A[i + 1] = A[i];
@@ -199,7 +199,7 @@ void Array::insert_in_sorted(int value) {
   A[i + 1] = value;
 }
 
-void Array::check_sorted() {
+void Array::checkSorted() {
   int flag = 1;
   for (int i = 0; i < getLength() - 1; i++) {
     if (A[i] > A[i + 1]) {
@@ -214,7 +214,7 @@ void Array::check_sorted() {
   }
 }
 
-void Array::negative_one_side() {
+void Array::negativeOneSide() {
   int i = 0, j = getLength() - 1;
   while (i < j) {
     while (A[i] < 0) {

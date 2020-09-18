@@ -2,12 +2,12 @@
 #define ARRAY_H
 
 class Array {
-  private:
+ private:
   int *A;
   int size;
   int length;
 
-  public:
+ public:
   Array(int);
   int getLength();
   int getSize();
@@ -17,13 +17,13 @@ class Array {
   void setSize(int);
 
   void display();
-  void increase_length();
+  void increaseLength();
   void append(int);
   void insert(int, int);
-  void delete_at(int);
+  void deleteAt(int);
   int search(int);
   void swap(int *, int *);
-  int binary_search(int);
+  int binarySearch(int);
   int get(int);
   void set(int, int);
   int max();
@@ -32,13 +32,13 @@ class Array {
   double avg();
   void reverse();
   void reverse2();
-  void left_shift();
-  void right_shift();
-  void left_rotation();
-  void right_rotation();
-  void insert_in_sorted(int);
-  void check_sorted();
-  void negative_one_side();
+  void leftShift();
+  void rightShift();
+  void leftRotation();
+  void rightRotation();
+  void insertInSorted(int);
+  void checkSorted();
+  void negativeOneSide();
 };
 
 #endif
