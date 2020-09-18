@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "*.tcc": "cpp",
+    "cctype": "cpp",
+    "iostream": "cpp",
+    "string_view": "cpp",
+    "regex": "cpp"
+  }
+}

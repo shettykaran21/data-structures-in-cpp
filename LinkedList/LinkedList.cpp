@@ -1,0 +1,249 @@
+#include "LinkedList.h"
+
+#include <iostream>
+
+using namespace std;
+
+LinkedList::LinkedList() { head = NULL; }
+
+void LinkedList::Create(int arr[], int n) {
+  Node *new_node, *last_node;
+
+  head = new Node();
+  head->data = arr[0];
+  head->next = NULL;
+  last_node = head;
+
+  for (int i = 1; i < n; ++i) {
+    new_node = new Node();
+    new_node->data = arr[i];
+    new_node->next = NULL;
+
+    last_node->next = new_node;
+    last_node = new_node;
+  }
+}
+
+void LinkedList::Display() {
+  Node *p = head;
+  while (p != NULL) {
+    cout << p->data << " ";
+    p = p->next;
+  }
+  cout << '\n';
+}
+
+void LinkedList::DisplayRecursive(Node *p) {
+  if (p != NULL) {
+    cout << p->data << ' ';
+    DisplayRecursive(p->next);
+  } else {
+    cout << '\n';
+  }
+}
+
+int LinkedList::Count() {
+  Node *p = head;
+  int count = 0;
+  while (p != NULL) {
+    count++;
+    p = p->next;
+  }
+  return count;
+}
+
+int LinkedList::CountRecursive(Node *p) {
+  if (p == NULL) {
+    return 0;
+  }
+
+  return CountRecursive(p->next) + 1;
+}
+
+int LinkedList::Sum() {
+  Node *p = head;
+
+  int sum = 0;
+  while (p != NULL) {
+    sum += p->data;
+    p = p->next;
+  }
+  return sum;
+}
+
+int LinkedList::SumRecursive(Node *p) {
+  if (p == NULL) {
+    return 0;
+  }
+
+  return SumRecursive(p->next) + p->data;
+}
+
+int LinkedList::Max() {
+  Node *p = head;
+
+  int max = INT32_MIN;
+  while (p != NULL) {
+    if (p->data > max) {
+      max = p->data;
+    }
+    p = p->next;
+  }
+  return max;
+}
+
+int LinkedList::MaxRecursive(Node *p) {
+  int x = 0;
+  if (p == NULL) {
+    return INT32_MIN;
+  }
+
+  x = MaxRecursive(p->next);
+  if (x > p->data) {
+    return x;
+  } else {
+    return p->data;
+  }
+}
+
+// int LinkedList::Search(int key) {
+//   Node *p = head;
+
+//   int count = 0;
+//   while (p != NULL) {
+//     if (key == p->data) {
+//       return count;
+//     }
+//     p = p->next;
+//     count++;
+//   }
+//   return -1;
+// }
+
+// Searching with Move to head
+int LinkedList::Search(int key) {
+  Node *p = head;
+  Node *q = NULL;
+
+  int count = 0;
+  while (p != NULL) {
+    if (key == p->data) {
+      q->next = p->next;
+      p->next = head;
+      head = p;
+
+      return count;
+    }
+    q = p;
+    p = p->next;
+
+    count++;
+  }
+  return -1;
+}
+
+void LinkedList::InsertFirst(int data) {
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  new_node->next = head;
+
+  // Make new_node as head of list
+  head = new_node;
+}
+
+void LinkedList::InsertEnd(int data) {
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  Node *last_node = head;
+
+  // If the Linked List is empty, then make the new node as head
+  if (head == NULL) {
+    head = new_node;
+    return;
+  }
+
+  // Point last_node to the last node of list
+  while (last_node->next != NULL) {
+    last_node = last_node->next;
+  }
+
+  new_node->next = NULL;
+  last_node->next = new_node;
+}
+
+void LinkedList::InsertAt(int index, int data) {
+  Node *p = head;
+
+  if (index <= 0 || index > this->Count()) {
+    return;
+  }
+
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  for (int i = 0; i < index - 1; ++i) {
+    p = p->next;
+  }
+  new_node->next = p->next;
+  p->next = new_node;
+}
+
+void LinkedList::InsertInSorted(int data) {
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  Node *p = head;
+  Node *q = NULL;
+
+  // When there is empty list
+  if (head == NULL) {
+    head = new_node;
+    return;
+  }
+
+  while (p != NULL && p->data < data) {
+    q = p;
+    p = p->next;
+  }
+
+  // If new node is inserted before head
+  if (p == head) {
+    new_node->next = head;
+    head = new_node;
+  } else {
+    new_node->next = q->next;
+    q->next = new_node;
+  }
+}
+
+void LinkedList::DeleteFirst() {
+  Node *p = head;
+  head = head->next;
+
+  delete p;
+}
+
+void LinkedList::DeleteAt(int index) {
+  if (index <= 0 || index > this->Count()) {
+    return;
+  }
+
+  Node *p = head;
+  Node *q = NULL;
+
+  for (int i = 0; i < index; ++i) {
+    q = p;
+    p = p->next;
+  }
+  q->next = p->next;
+
+  delete p;
+}
+
+Node * ::LinkedList::get_head() { return this->head; }
