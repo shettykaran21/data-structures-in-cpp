@@ -26,6 +26,7 @@ class LinkedList {
   void deleteFirst();
   void deleteAt(int index);
   bool isSorted();
+  void removeDuplicates();
 
   Node *getHead();
 };

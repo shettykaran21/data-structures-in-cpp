@@ -261,4 +261,20 @@ bool LinkedList::isSorted() {
   return true;
 }
 
+void LinkedList::removeDuplicates() {
+  Node *p = head;
+  Node *q = head->next;
+
+  while (q != NULL) {
+    if (q->data == p->data) {
+      p->next = q->next;
+      delete q;
+      q = p->next;
+    } else {
+      p = q;
+      q = q->next;
+    }
+  }
+}
+
 Node * ::LinkedList::getHead() { return this->head; }
