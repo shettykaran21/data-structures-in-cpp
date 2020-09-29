@@ -20,17 +20,15 @@ int main() {
 
   list.insertEnd(1);
   list.insertEnd(4);
-  list.insertEnd(4);
-  list.insertEnd(4);
   list.insertEnd(8);
   list.insertEnd(10);
 
-  list.display();
-  cout << "Count = " << list.count() << '\n';
-  cout << "Sum = " << list.sum() << '\n';
-  cout << "Max = " << list.max() << '\n';
-  cout << "Key found at index " << list.search(5) << '\n';
-  list.display();
+  // list.display();
+  // cout << "Count = " << list.count() << '\n';
+  // cout << "Sum = " << list.sum() << '\n';
+  // cout << "Max = " << list.max() << '\n';
+  // cout << "Key found at index " << list.search(5) << '\n';
+  // list.display();
   // list.insertFirst(9);
   // list.display();
   // list.insertAt(2, 12);
@@ -42,7 +40,8 @@ int main() {
   // list.deleteAt(2);
   // list.display();
   // cout << list.isSorted() << '\n';
-  list.removeDuplicates();
+  // list.removeDuplicates();
+  list.reverseByLinks();
   list.display();
 
   return 0;
