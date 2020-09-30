@@ -75,5 +75,3 @@ bool Stack::isFull() {
   }
   return false;
 }
-
-Node* Stack::getHead() { return this->head; }

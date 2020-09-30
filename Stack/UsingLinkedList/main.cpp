@@ -15,7 +15,6 @@ int main() {
   stack.push(60);
   cout << stack.pop() << '\n';
   cout << stack.peek(1) << '\n';
-
   stack.display();
 
   return 0;

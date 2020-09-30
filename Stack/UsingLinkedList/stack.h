@@ -5,7 +5,6 @@
 
 class Stack {
  private:
-  Node *head;
   Node *top;
 
  public:
@@ -17,8 +16,6 @@ class Stack {
   bool isEmpty();
   bool isFull();
   int stackTop();
-
-  Node *getHead();
 };
 
 #endif
