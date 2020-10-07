@@ -11,6 +11,7 @@ class Stack {
   Stack(int);
   void push(char);
   char pop();
+  char stackTop();
   bool isEmpty();
   bool isFull();
 

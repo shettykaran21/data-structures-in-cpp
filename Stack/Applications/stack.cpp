@@ -30,6 +30,13 @@ char Stack::pop() {
   return x;
 }
 
+char Stack::stackTop() {
+  if (isEmpty()) {
+    return -1;
+  }
+  return this->s[getTop()];
+}
+
 bool Stack::isEmpty() {
   if (getTop() == -1) {
     return true;
