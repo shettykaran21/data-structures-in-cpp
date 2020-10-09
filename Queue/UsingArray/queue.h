@@ -14,7 +14,7 @@ class Queue {
   void enqueue(int);
   int dequeue();
   int frontt();
-  int backk();
+  int rearr();
   bool isEmpty();
   bool isFull();
 

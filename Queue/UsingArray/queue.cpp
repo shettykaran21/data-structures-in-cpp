@@ -45,7 +45,7 @@ int Queue::frontt() {
   return x;
 }
 
-int Queue::backk() {
+int Queue::rearr() {
   int x = INT32_MIN;
   if (!isEmpty()) {
     x = this->q[getRear()];
