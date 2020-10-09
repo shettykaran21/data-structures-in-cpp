@@ -21,9 +21,9 @@ int main() {
   circular_queue.enqueue(5);
   circular_queue.enqueue(6);
   circular_queue.enqueue(10);
-  circular_queue.enqueue(11);
-  // circular_queue.dequeue();
-  // circular_queue.dequeue();
+  // circular_queue.enqueue(11);
+  circular_queue.dequeue();
+  circular_queue.dequeue();
   circular_queue.display();
 
   return 0;

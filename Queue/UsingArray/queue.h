@@ -13,6 +13,8 @@ class Queue {
   void display();
   void enqueue(int);
   int dequeue();
+  int frontt();
+  int backk();
   bool isEmpty();
   bool isFull();
 

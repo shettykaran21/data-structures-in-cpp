@@ -27,12 +27,28 @@ void Queue::enqueue(int x) {
 }
 
 int Queue::dequeue() {
-  int x = -1;
+  int x = INT32_MIN;
   if (isEmpty()) {
     cout << "Queue is empty\n";
   } else {
     setFront(getFront() + 1);
     x = this->q[getFront()];
+  }
+  return x;
+}
+
+int Queue::frontt() {
+  int x = INT32_MIN;
+  if (!isEmpty()) {
+    x = this->q[getFront() + 1];
+  }
+  return x;
+}
+
+int Queue::backk() {
+  int x = INT32_MIN;
+  if (!isEmpty()) {
+    x = this->q[getRear()];
   }
   return x;
 }
