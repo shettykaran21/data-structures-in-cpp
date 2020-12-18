@@ -63,6 +63,7 @@ int Array::search(int key) {
   return -1;
 }
 
+// Condition: Array must be sorted
 int Array::binarySearch(int key) {
   int l = 0;
   int h = getLength() - 1;
@@ -80,6 +81,23 @@ int Array::binarySearch(int key) {
     }
   }
   return -1;
+}
+
+// Iterative version is preferred bcz instead of tail recursion loops are
+// preferable
+int Array::rBinarySearch(int arr[], int l, int h, int key) {
+  int mid;
+
+  if (l <= h) {
+    mid = (l + h) / 2;
+    if (key == arr[mid]) {
+      return mid;
+    } else if (key < arr[mid]) {
+      return rBinarySearch(arr, l, mid - 1, key);
+    } else {
+      return rBinarySearch(arr, mid + 1, h, key);
+    }
+  }
 }
 
 void Array::swap(int *a, int *b) {

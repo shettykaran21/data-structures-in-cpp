@@ -24,6 +24,7 @@ class Array {
   int search(int);
   void swap(int *, int *);
   int binarySearch(int);
+  int rBinarySearch(int[], int, int, int);
   int get(int);
   void set(int, int);
   int max();
