@@ -64,19 +64,6 @@ int Array::search(int key) {
 }
 
 int Array::binarySearch(int key) {
-  int *B = new int[getLength()];
-  for (int i = 0; i < getLength(); ++i) {
-    B[i] = A[i];
-  }
-
-  cout << "B Array Elements: ";
-  for (int i = 0; i < getLength(); ++i) {
-    cout << B[i] << " ";
-  }
-  cout << '\n';
-
-  sort(B, B + getLength());
-
   int l = 0;
   int h = getLength() - 1;
   int mid;
