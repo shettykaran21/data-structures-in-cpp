@@ -7,9 +7,9 @@ using namespace std;
 int main() {
   Tree t;
   t.createTree();
-  t.iPreOrder();
-  t.iInOrder();
-  t.levelOrder();
+  t.iPreorder();
+  t.iInorder();
+  t.levelorder();
   cout << t.count(t.root) << "\n";
   cout << t.height(t.root) << "\n";
 

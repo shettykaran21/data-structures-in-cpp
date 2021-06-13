@@ -63,7 +63,7 @@ int Array::search(int key) {
   return -1;
 }
 
-// Condition: Array must be sorted
+// Condition: Array must be sorted (Time Complexity: ceil(log2(n+1))
 int Array::binarySearch(int key) {
   int l = 0;
   int h = getLength() - 1;

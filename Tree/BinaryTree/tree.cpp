@@ -48,15 +48,15 @@ void Tree::createTree() {
   }
 }
 
-void Tree::preOrder(Node *p) {
+void Tree::preorder(Node *p) {
   if (p) {
     cout << p->data << " ";
-    preOrder(p->left);
-    preOrder(p->right);
+    preorder(p->left);
+    preorder(p->right);
   }
 }
 
-void Tree::iPreOrder() {
+void Tree::iPreorder() {
   Node *p = this->root;
   Stack s(100);
 
@@ -73,16 +73,16 @@ void Tree::iPreOrder() {
   cout << "\n";
 }
 
-void Tree::inOrder(Node *p) {
+void Tree::inorder(Node *p) {
   if (p) {
-    inOrder(p->left);
+    inorder(p->left);
     cout << p->data << " ";
-    inOrder(p->right);
+    inorder(p->right);
   }
   cout << "\n";
 }
 
-void Tree::iInOrder() {
+void Tree::iInorder() {
   Node *p = this->root;
   Stack s(100);
 
@@ -99,15 +99,15 @@ void Tree::iInOrder() {
   cout << "\n";
 }
 
-void Tree::postOrder(Node *p) {
+void Tree::postorder(Node *p) {
   if (p) {
-    postOrder(p->left);
-    postOrder(p->right);
+    postorder(p->left);
+    postorder(p->right);
     cout << p->data << " ";
   }
 }
 
-void Tree::levelOrder() {
+void Tree::levelorder() {
   Node *p = this->root;
   Queue q(100);
   cout << p->data << " ";

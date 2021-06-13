@@ -9,13 +9,13 @@ class Tree {
 
   Tree();
   void createTree();
-  void preOrder(Node *p);
-  void postOrder(Node *p);
-  void inOrder(Node *p);
-  void levelOrder();
+  void preorder(Node *p);
+  void postorder(Node *p);
+  void inorder(Node *p);
+  void levelorder();
 
-  void iPreOrder();
-  void iInOrder();
+  void iPreorder();
+  void iInorder();
 
   int count(Node *p);
   int height(Node *p);
