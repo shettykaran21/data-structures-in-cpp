@@ -6,7 +6,7 @@ using namespace std;
 
 Array::Array(int length) {
   this->length = length;
-  setA(new int[getLength()]);
+  this->A = new int[length];
 }
 
 void Array::display() {
@@ -98,6 +98,7 @@ int Array::rBinarySearch(int arr[], int l, int h, int key) {
       return rBinarySearch(arr, mid + 1, h, key);
     }
   }
+  return -1;
 }
 
 void Array::swap(int *a, int *b) {

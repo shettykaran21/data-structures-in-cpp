@@ -4,17 +4,14 @@
 class Array {
  private:
   int *A;
-  int size;
   int length;
 
  public:
   Array(int);
   int getLength();
-  int getSize();
   int *getA();
   void setA(int *);
   void setLength(int);
-  void setSize(int);
 
   void display();
   void increaseLength();
