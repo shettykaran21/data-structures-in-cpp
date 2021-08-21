@@ -19,6 +19,7 @@ int main() {
   // list.insertAt(head, 1, 10);
 
   list.insertEnd(1);
+  list.display();
   list.insertEnd(4);
   list.insertEnd(8);
   list.insertEnd(10);
@@ -41,7 +42,7 @@ int main() {
   // list.display();
   // cout << list.isSorted() << '\n';
   // list.removeDuplicates();
-  list.reverseByLinks();
+  // list.reverseByLinks();
   list.display();
 
   return 0;

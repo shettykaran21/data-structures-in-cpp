@@ -157,6 +157,7 @@ void LinkedList::insertEnd(int data) {
   // Create and set data of new node
   Node *new_node = new Node();
   new_node->data = data;
+  new_node->next = NULL;
 
   Node *last_node = head;
 
@@ -171,7 +172,6 @@ void LinkedList::insertEnd(int data) {
     last_node = last_node->next;
   }
 
-  new_node->next = NULL;
   last_node->next = new_node;
 }
 
