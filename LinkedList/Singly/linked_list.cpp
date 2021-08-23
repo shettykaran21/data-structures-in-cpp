@@ -261,6 +261,7 @@ bool LinkedList::isSorted() {
   return true;
 }
 
+// Remove duplicates from sorted linked list
 void LinkedList::removeDuplicates() {
   Node *p = head;
   Node *q = head->next;

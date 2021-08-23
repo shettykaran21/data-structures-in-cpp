@@ -7,10 +7,59 @@ using namespace std;
 
 Node *head = NULL;
 
+void concat(Node *first, Node *second) {
+  Node *p = first;
+
+  while (p->next != NULL) {
+    p = p->next;
+  }
+
+  p->next = second;
+  second = NULL;
+}
+
+void mergeSorted(Node *first, Node *second) {
+  Node *third = NULL;
+  Node *last = NULL;
+
+  if (first->data == second->data) {
+    third = first;
+    last = first;
+    first = first->next;
+    last->next = NULL;
+  } else {
+    third = second;
+    last = second;
+    second = second->next;
+    last->next = NULL;
+  }
+
+  while (first != NULL && second != NULL) {
+    if (first->data < second->data) {
+      last->next = first;
+      last = first;
+      first = first->next;
+      last->next = NULL;
+    } else {
+      last->next = second;
+      last = second;
+      second = second->next;
+      last->next = NULL;
+    }
+  }
+
+  if (first != NULL) {
+    last->next = first;
+  } else {
+    last->next = second;
+  }
+}
+
 int main() {
   int arr[] = {7, 4, 0, 1, 6};
 
   LinkedList list;
+  LinkedList list2;
 
   // list.create(arr, sizeof(arr) / sizeof(arr[0]));
   // list.insertFirst(5);
@@ -19,10 +68,17 @@ int main() {
   // list.insertAt(head, 1, 10);
 
   list.insertEnd(1);
-  list.display();
   list.insertEnd(4);
   list.insertEnd(8);
   list.insertEnd(10);
+
+  list2.insertEnd(9);
+  list2.insertEnd(3);
+  list2.insertEnd(6);
+  list2.insertEnd(12);
+
+  // concat(list.getHead(), list2.getHead());
+  mergeSorted(list.getHead(), list2.getHead());
 
   // list.display();
   // cout << "Count = " << list.count() << '\n';
