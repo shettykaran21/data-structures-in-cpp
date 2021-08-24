@@ -122,4 +122,42 @@ void LinkedList::insertAt(int index, int data) {
   p->next = new_node;
 }
 
+void LinkedList::deleteFirst() {
+  Node *p = head;
+  Node *last_node = head;
+
+  while (last_node->next != head) {
+    last_node = last_node->next;
+  }
+
+  // If list contains only one element
+  if (last_node == head) {
+    delete p;
+    head = NULL;
+    return;
+  }
+
+  head = head->next;
+  last_node->next = head;
+
+  delete p;
+}
+
+void LinkedList::deleteAt(int index) {
+  if (index <= 0 || index > this->count()) {
+    return;
+  }
+
+  Node *p = head;
+  Node *q = NULL;
+
+  for (int i = 0; i < index - 1; ++i) {
+    p = p->next;
+  }
+  q = p->next;
+  p->next = q->next;
+
+  delete q;
+}
+
 Node * ::LinkedList::getHead() { return this->head; }

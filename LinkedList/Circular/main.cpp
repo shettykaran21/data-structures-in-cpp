@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-  int arr[5] = {1, 2, 3, 4, 5};
+  int arr[] = {1, 2, 3, 4, 5};
 
   LinkedList list;
 
@@ -15,8 +15,11 @@ int main() {
   // list.display();
   // list.displayRecursive(list.getHead());
   // cout << list.count() << '\n';
+  // list.insertEnd(0);
+  // list.deleteFirst();
+  // list.insertEnd(3);
+  list.deleteAt(2);
 
-  list.insertEnd(0);
   list.display();
 
   return 0;

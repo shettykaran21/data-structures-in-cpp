@@ -16,6 +16,8 @@ class LinkedList {
   void insertFirst(int data);
   void insertEnd(int data);
   void insertAt(int index, int data);
+  void deleteFirst();
+  void deleteAt(int index);
 
   Node *getHead();
 };
