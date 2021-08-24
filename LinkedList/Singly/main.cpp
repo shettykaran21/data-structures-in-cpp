@@ -66,9 +66,9 @@ bool isLoop(Node *head) {
     // Move q by two places
     q = q->next;
     q = q != NULL ? q->next : q;
-  } while (p != NULL && q != NULL && p != q) {
-    return p == q ? true : false;
-  }
+  } while (p != NULL && q != NULL && p != q);
+
+  return p == q ? true : false;
 }
 
 int main() {
