@@ -12,6 +12,12 @@ class LinkedList {
   void create(int arr[], int n);
   void display();
   void displayRecursive(Node *p);
+  int count();
+  void insertFirst(int data);
+  void insertEnd(int data);
+  void insertAt(int index, int data);
+
+  Node *getHead();
 };
 
 #endif

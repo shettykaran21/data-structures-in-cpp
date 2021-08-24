@@ -48,3 +48,78 @@ void LinkedList::displayRecursive(Node *p) {
   }
   flag = false;
 }
+
+int LinkedList::count() {
+  Node *p = head;
+  int count = 0;
+  do {
+    count++;
+    p = p->next;
+  } while (p != head);
+
+  return count;
+}
+
+void LinkedList::insertFirst(int data) {
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  // If the Linked List is empty
+  if (head == NULL) {
+    head = new_node;
+    head->next = head;
+    return;
+  }
+
+  Node *last_node = head;
+  while (last_node->next != head) {
+    last_node = last_node->next;
+  }
+
+  last_node->next = new_node;
+  new_node->next = head;
+
+  // Make new_node as head of list
+  head = new_node;
+}
+
+void LinkedList::insertEnd(int data) {
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  // If the Linked List is empty
+  if (head == NULL) {
+    head = new_node;
+    head->next = head;
+    return;
+  }
+
+  Node *last_node = head;
+  while (last_node->next != head) {
+    last_node = last_node->next;
+  }
+  last_node->next = new_node;
+  new_node->next = head;
+}
+
+void LinkedList::insertAt(int index, int data) {
+  Node *p = head;
+
+  if (index <= 0 || index > this->count()) {
+    return;
+  }
+
+  // Create and set data of new node
+  Node *new_node = new Node();
+  new_node->data = data;
+
+  for (int i = 0; i < index - 1; ++i) {
+    p = p->next;
+  }
+  new_node->next = p->next;
+  p->next = new_node;
+}
+
+Node * ::LinkedList::getHead() { return this->head; }
