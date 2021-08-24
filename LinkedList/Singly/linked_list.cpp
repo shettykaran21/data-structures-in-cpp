@@ -109,13 +109,13 @@ int LinkedList::maxRecursive(Node *p) {
 // int LinkedList::search(int key) {
 //   Node *p = head;
 
-//   int count = 0;
+//   int index = 0;
 //   while (p != NULL) {
 //     if (key == p->data) {
-//       return count;
+//       return index;
 //     }
 //     p = p->next;
-//     count++;
+//     index++;
 //   }
 //   return -1;
 // }
@@ -125,19 +125,19 @@ int LinkedList::search(int key) {
   Node *p = head;
   Node *q = NULL;
 
-  int count = 0;
+  int index = 0;
   while (p != NULL) {
     if (key == p->data) {
       q->next = p->next;
       p->next = head;
       head = p;
 
-      return count;
+      return index;
     }
     q = p;
     p = p->next;
 
-    count++;
+    index++;
   }
   return -1;
 }

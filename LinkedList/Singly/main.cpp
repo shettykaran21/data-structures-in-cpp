@@ -55,6 +55,22 @@ void mergeSorted(Node *first, Node *second) {
   }
 }
 
+bool isLoop(Node *head) {
+  Node *p = head;
+  Node *q = head;
+
+  do {
+    // Move p by one place
+    p = p->next;
+
+    // Move q by two places
+    q = q->next;
+    q = q != NULL ? q->next : q;
+  } while (p != NULL && q != NULL && p != q) {
+    return p == q ? true : false;
+  }
+}
+
 int main() {
   int arr[] = {7, 4, 0, 1, 6};
 
