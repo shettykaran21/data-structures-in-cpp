@@ -9,7 +9,9 @@ class LinkedList {
 
  public:
   LinkedList();
+  void create(int arr[], int n);
   void display();
+  void displayRecursive(Node *p);
 };
 
 #endif
