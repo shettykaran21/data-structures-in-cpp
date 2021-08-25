@@ -24,6 +24,7 @@ int main() {
   // list.display();
   // list.insertAt(2, 10);
   // list.deleteFirst();
+  // list.reverse();
 
   list.display();
 

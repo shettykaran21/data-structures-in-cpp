@@ -118,3 +118,21 @@ void LinkedList::deleteFirst() {
 
   delete p;
 }
+
+void LinkedList::reverse() {
+  Node *p = head;
+  Node *temp;
+
+  while (p != NULL) {
+    temp = p->next;
+    p->next = p->prev;
+    p->prev = temp;
+    p = p->prev;
+
+    if (p != NULL && p->next == NULL) {
+      head = p;
+    }
+  }
+}
+
+Node * ::LinkedList::getHead() { return this->head; }
