@@ -10,6 +10,7 @@ class LinkedList {
  public:
   LinkedList();
   void display();
+  int count();
   void insertFirst(int data);
   void insertEnd(int data);
   void insertAt(int index, int data);
