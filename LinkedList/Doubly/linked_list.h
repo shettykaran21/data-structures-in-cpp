@@ -9,11 +9,14 @@ class LinkedList {
 
  public:
   LinkedList();
+  void create(int arr[], int n);
   void display();
   int count();
   void insertFirst(int data);
   void insertEnd(int data);
   void insertAt(int index, int data);
+  void deleteFirst();
+  void deleteAt(int index);
 
   Node *getHead();
 };
