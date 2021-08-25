@@ -25,7 +25,6 @@ int LinkedList::count() {
   return count;
 }
 
-
 void LinkedList::insertFirst(int data) {
   // Create and set data of new node
   Node *new_node = new Node();

@@ -12,6 +12,12 @@ int main() {
   list.create(arr, sizeof(arr) / sizeof(arr[0]));
 
   list.display();
+  // list.insertAt(2, 10);
+  // list.insertFirst(10);
+  // list.insertFirst(20);
+  // list.insertEnd(10);
+  // list.insertEnd(20);
+  // list.display();
 
   return 0;
 }

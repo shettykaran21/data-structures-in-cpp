@@ -11,6 +11,10 @@ class LinkedList {
   LinkedList();
   void create(int arr[], int n);
   void display();
+  int count();
+  void insertFirst(int data);
+  void insertEnd(int data);
+  void insertAt(int index, int data);
 
   Node *getHead();
 };
