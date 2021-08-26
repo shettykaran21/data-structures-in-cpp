@@ -27,29 +27,38 @@ bool isBalanced(string exp) {
   return st.isEmpty();
 }
 
-// bool isBalancedAdvanced(string exp) {
-//   Stack st(exp.length());
+bool isMatching(char ch, char ch2) {
+  if (ch == '[' && ch2 == ']') {
+    return true;
+  } else if (ch == '{' && ch2 == '}') {
+    return true;
+  } else if (ch == '(' && ch2 == ')') {
+    return true;
+  }
+  return false;
+}
 
-//   for (int i = 0; i < exp.length(); ++i) {
-//     if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{') {
-//       st.push(exp[i]);
-//     } else if (exp[i] == ')' || exp[i] == ']' || exp[i] == '}') {
-//       if (st.isEmpty()) {
-//         return false;
-//       }
+// Parenthesis Matching - Advanced
+bool isBalancedAdvanced(string exp) {
+  Stack st(exp.length());
 
-//       if (abs(exp[i]) - st.stackTop() == 1) {
-//         st.pop();
-//       } else if (abs(exp[i]) - st.stackTop() == 2) {
-//         if (exp[i] == 93) {
-//           st.pop();
-//         } else if (exp[i] == )
-//       }
-//     }
-//   }
+  for (int i = 0; i < exp.length(); ++i) {
+    if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{') {
+      st.push(exp[i]);
+    } else if (exp[i] == ')' || exp[i] == ']' || exp[i] == '}') {
+      if (st.isEmpty()) {
+        return false;
+      }
 
-//   return st.isEmpty();
-// }
+      char x = st.pop();
+      if (!isMatching(x, exp[i])) {
+        return false;
+      }
+    }
+  }
+
+  return st.isEmpty();
+}
 
 // Convert from infix to postfix
 string convertToPostfix(string infix) {
@@ -99,12 +108,14 @@ int precedence(char x) {
 int main() {
   // string exp = "((a+b)*(c-d))";
   // cout << isBalanced(exp) << '\n';
+  string exp = "{([a+b]*[c-d])/e}";
+  cout << isBalancedAdvanced(exp) << '\n';
 
-  string infix = "a+b*c-d/e";
-  string postfix = convertToPostfix(infix);
+  // string infix = "a+b*c-d/e";
+  // string postfix = convertToPostfix(infix);
 
-  cout << postfix << '\n';
-  cout << postfix.length() << '\n';
+  // cout << postfix << '\n';
+  // cout << postfix.length() << '\n';
 
   return 0;
 }
