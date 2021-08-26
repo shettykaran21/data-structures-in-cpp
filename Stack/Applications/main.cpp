@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 #include "stack.h"
+#include "stack_int.h"
 
 using namespace std;
 
@@ -189,6 +190,38 @@ bool isOperandAdvanced(char x) {
   return true;
 }
 
+int evaluation(string postfix) {
+  StackInt st(postfix.length());
+
+  // Operands and result
+  int op1, op2, res;
+
+  for (int i = 0; i < postfix.length(); ++i) {
+    if (isOperand(postfix[i])) {
+      st.push(postfix[i] - '0');
+    } else {
+      op2 = st.pop();
+      op1 = st.pop();
+      switch (postfix[i]) {
+        case '+':
+          res = op1 + op2;
+          break;
+        case '-':
+          res = op1 - op2;
+          break;
+        case '*':
+          res = op1 * op2;
+          break;
+        case '/':
+          res = op1 / op2;
+          break;
+      }
+      st.push(res);
+    }
+  }
+  return st.stackTop();
+}
+
 int main() {
   // string exp = "((a+b)*(c-d))";
   // cout << isBalanced(exp) << '\n';
@@ -201,10 +234,12 @@ int main() {
   // cout << postfix << '\n';
   // cout << postfix.length() << '\n';
 
-  string infix = "((a+b)*c)-d^e^f";
-  string postfix = convertToPostfixAdvanced(infix);
+  // string infix = "((a+b)*c)-d^e^f";
+  // string postfix = convertToPostfixAdvanced(infix);
 
-  cout << postfix << '\n';
+  string postfix = "234*+82/-";
+
+  cout << evaluation(postfix) << '\n';
 
   return 0;
 }
