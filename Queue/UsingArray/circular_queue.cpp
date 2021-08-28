@@ -11,11 +11,11 @@ CircularQueue::CircularQueue(int size) {
 }
 
 void CircularQueue::display() {
-  int i = getFront() + 1;
+  int i = front + 1;
   do {
     cout << this->q[i] << ' ';
-    i = (i + 1) % getSize();
-  } while (i != (getRear() + 1) % getSize());
+    i = (i + 1) % size;
+  } while (i != (rear + 1) % size);
 
   cout << '\n';
 }
@@ -24,8 +24,8 @@ void CircularQueue::enqueue(int x) {
   if (isFull()) {
     cout << "Queue is full\n";
   } else {
-    setRear((getRear() + 1) % getSize());
-    this->q[getRear()] = x;
+    setRear((rear + 1) % size);
+    this->q[rear] = x;
   }
 }
 
@@ -34,21 +34,21 @@ int CircularQueue::dequeue() {
   if (isEmpty()) {
     cout << "Queue is empty\n";
   } else {
-    setFront((getFront() + 1) % getSize());
-    x = this->q[getFront()];
+    setFront((front + 1) % size);
+    x = this->q[front];
   }
   return x;
 }
 
 bool CircularQueue::isEmpty() {
-  if (getFront() == getRear()) {
+  if (front == rear) {
     return true;
   }
   return false;
 }
 
 bool CircularQueue::isFull() {
-  if ((getRear() + 1) % getSize() == getFront()) {
+  if ((rear + 1) % size == front) {
     return true;
   }
   return false;
