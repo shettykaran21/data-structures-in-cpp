@@ -25,9 +25,9 @@ void Tree::createTree() {
 
   while (!q.isEmpty()) {
     p = q.dequeue();
+
     cout << "Enter left child of " << p->data << ": ";
     cin >> x;
-
     if (x != -1) {
       t = new Node();
       t->data = x;
@@ -56,6 +56,7 @@ void Tree::preorder(Node *p) {
   }
 }
 
+// Iterative Preorder requires stack
 void Tree::iPreorder() {
   Node *p = this->root;
   Stack s(100);
@@ -82,6 +83,7 @@ void Tree::inorder(Node *p) {
   cout << "\n";
 }
 
+// Iterative Inorder requires stack
 void Tree::iInorder() {
   Node *p = this->root;
   Stack s(100);
@@ -107,6 +109,7 @@ void Tree::postorder(Node *p) {
   }
 }
 
+// Level order requires queue
 void Tree::levelorder() {
   Node *p = this->root;
   Queue q(100);
@@ -146,7 +149,7 @@ int Tree::height(Node *p) {
     return 0;
   }
   x = height(p->left);
-  x = height(p->right);
+  y = height(p->right);
 
   if (x > y) {
     return x + 1;
