@@ -56,19 +56,17 @@ void mergeSorted(Node *first, Node *second) {
 }
 
 bool isLoop(Node *head) {
-  Node *p = head;
-  Node *q = head;
+  Node *slow, *fast = head;
 
-  do {
-    // Move p by one place
-    p = p->next;
+  while (fast && fast->next) {
+    slow = slow->next;
+    fast = fast->next->next;
 
-    // Move q by two places
-    q = q->next;
-    q = q != NULL ? q->next : q;
-  } while (p != NULL && q != NULL && p != q);
-
-  return p == q ? true : false;
+    if (slow == fast) {
+      return true;
+    }
+  }
+  return false;
 }
 
 int main() {
