@@ -20,52 +20,38 @@ void Queue::display() {
 void Queue::enqueue(int x) {
   if (isFull()) {
     cout << "Queue is full\n";
-  } else {
-    setRear(rear + 1);
-    this->q[rear] = x;
+    return;
   }
+  rear++;
+  q[rear] = x;
 }
 
 int Queue::dequeue() {
-  int x = INT32_MIN;
   if (isEmpty()) {
     cout << "Queue is empty\n";
-  } else {
-    setFront(front + 1);
-    x = this->q[front];
+    return -1;
   }
-  return x;
+  front++;
+  return q[front];
 }
 
 int Queue::frontt() {
-  int x = INT32_MIN;
   if (!isEmpty()) {
-    x = this->q[front + 1];
+    return q[front + 1];
   }
-  return x;
+  return -1;
 }
 
 int Queue::rearr() {
-  int x = INT32_MIN;
   if (!isEmpty()) {
-    x = this->q[rear];
+    return q[rear];
   }
-  return x;
+  return -1;
 }
 
-bool Queue::isEmpty() {
-  if (front == rear) {
-    return true;
-  }
-  return false;
-}
+bool Queue::isEmpty() { return front == rear; }
 
-bool Queue::isFull() {
-  if (rear == size - 1) {
-    return true;
-  }
-  return false;
-}
+bool Queue::isFull() { return rear == size - 1; }
 
 int Queue::getSize() { return this->size; }
 int Queue::getFront() { return this->front; }

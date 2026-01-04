@@ -1,24 +1,49 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "type": "shell",
-      "label": "Build C++",
-      "command": "/usr/bin/g++",
-      "args": [
-        "-g",
-        "*.cpp",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build C++",
+            "command": "/opt/homebrew/bin/g++-15",
+            "args": [
+                "-std=c++23",
+                "*.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build"
+            },
+            "detail": "compiler: /opt/homebrew/bin/g++-15"
+        },
+        {
+            "label": "Run and Delete",
+            "type": "shell",
+            "command": "sh",
+            "args": [
+                "-c",
+                "\"clear && ${fileDirname}/${fileBasenameNoExtension} && rm -f ${fileDirname}/${fileBasenameNoExtension}\""
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Build and Run",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build C++", "Run and Delete"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }

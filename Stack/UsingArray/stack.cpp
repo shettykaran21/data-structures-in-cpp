@@ -11,8 +11,8 @@ Stack::Stack(int size) {
 }
 
 void Stack::display() {
-  for (int i = getTop(); i >= 0; --i) {
-    cout << this->s[i] << ' ';
+  for (int i = top; i >= 0; --i) {
+    cout << s[i] << ' ';
   }
   cout << '\n';
 }
@@ -20,27 +20,25 @@ void Stack::display() {
 void Stack::push(int x) {
   if (isFull()) {
     cout << "Stack Overflow\n";
-  } else {
-    setTop(getTop() + 1);
-    this->s[getTop()] = x;
+    return;
   }
+
+  s[++top] = x;
 }
 
 int Stack::pop() {
-  int x = -1;
   if (isEmpty()) {
     cout << "Stack Underflow\n";
-  } else {
-    x = this->s[getTop()];
-    setTop(getTop() - 1);
+    return -1;
   }
-  return x;
+
+  return s[top--];
 }
 
 int Stack::peek(int pos) {
-  if (pos >= 1 && pos <= getSize()) {
-    int index = getTop() - pos + 1;
-    return this->s[index];
+  if (pos >= 1 && pos <= size) {
+    int index = top - pos + 1;
+    return s[index];
   } else {
     cout << "Invalid Position\n";
     return -1;
@@ -51,22 +49,12 @@ int Stack::stackTop() {
   if (isEmpty()) {
     return -1;
   }
-  return this->s[getTop()];
+  return s[top];
 }
 
-bool Stack::isEmpty() {
-  if (getTop() == -1) {
-    return true;
-  }
-  return false;
-}
+bool Stack::isEmpty() { return top == -1; }
 
-bool Stack::isFull() {
-  if (getTop() == getSize() - 1) {
-    return true;
-  }
-  return false;
-}
+bool Stack::isFull() { return top == size - 1; }
 
 int Stack::getSize() { return this->size; }
 int Stack::getTop() { return this->top; }
